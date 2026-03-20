@@ -34,6 +34,12 @@
   content: '🌿 ';
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .language-selector {
   display: flex;
   gap: 0.6rem;

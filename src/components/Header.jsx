@@ -3,17 +3,15 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import { useFilters } from '../context/FilterContext'
+import SearchBar from './SearchBar'
 import './Header.css'
 
 export default function Header({ onCartToggle }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [filterMenuOpen, setFilterMenuOpen] = useState(false)
   const { t, i18n } = useTranslation()
   const { getTotalItems } = useCart()
-  const { filters, updateFilter } = useFilters()
-
-  const handleNavClick = () => {
-    setMobileMenuOpen(false)
-  }
+  const { filters, updateFilter, categories } = useFilters()
 
   // Mapear categorias com seus nomes em português
   const categoryMap = {
@@ -27,27 +25,7 @@ export default function Header({ onCartToggle }) {
   // Função para tratar clique em categoria
   const handleCategoryClick = (category) => {
     updateFilter('category', category)
-    setMobileMenuOpen(false)
-  }
-
-  // Função para renderizar links de categoria com classe ativa
-  const renderCategoryLink = (categoryKey, displayName) => {
-    const isActive = filters.category === categoryKey
-    return (
-      <li key={categoryKey}>
-        <a 
-          href={`#${categoryKey}`}
-          className={`category-link ${isActive ? 'active' : ''}`}
-          onClick={(e) => {
-            e.preventDefault()
-            handleCategoryClick(categoryKey)
-          }}
-          title={`Filtrar por ${displayName}`}
-        >
-          {displayName}
-        </a>
-      </li>
-    )
+    setFilterMenuOpen(false)
   }
 
   const languages = [
@@ -64,39 +42,57 @@ export default function Header({ onCartToggle }) {
           <h1>{t('common:brand')}</h1>
         </div>
 
-        {/* Hamburger Menu Button */}
-        <button 
-          className="hamburger-btn"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        {/* Search Bar + Filter Button */}
+        <div className="header-search-filter">
+          <SearchBar />
+          
+          {/* Filter Button (Funil) */}
+          <div className="filter-dropdown">
+            <button 
+              className="filter-btn"
+              onClick={() => setFilterMenuOpen(!filterMenuOpen)}
+              title="Filtros"
+              aria-label="Abrir filtros"
+            >
+              <span className="filter-icon">⚙️</span>
+            </button>
+            
+            {/* Filter Dropdown Menu */}
+            {filterMenuOpen && (
+              <div className="filter-menu">
+                <div className="filter-menu-title">Categorias</div>
+                <div className="filter-menu-item">
+                  <label>
+                    <input
+                      type="radio"
+                      name="category"
+                      value="all"
+                      checked={filters.category === 'all'}
+                      onChange={(e) => handleCategoryClick(e.target.value)}
+                    />
+                    Todos os Produtos
+                  </label>
+                </div>
+                {Object.entries(categoryMap).map(([key, name]) => (
+                  <div key={key} className="filter-menu-item">
+                    <label>
+                      <input
+                        type="radio"
+                        name="category"
+                        value={key}
+                        checked={filters.category === key}
+                        onChange={(e) => handleCategoryClick(e.target.value)}
+                      />
+                      {name}
+                    </label>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
 
-        {/* Navigation Menu */}
-        <nav className={`header-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-          <ul>
-            {/* Botão "Todos" */}
-            <li>
-              <a 
-                href="#all"
-                className={`category-link ${filters.category === 'all' ? 'active' : ''}`}
-                onClick={(e) => {
-                  e.preventDefault()
-                  handleCategoryClick('all')
-                }}
-                title="Mostrar todos os produtos"
-              >
-                Todos
-              </a>
-            </li>
-            {Object.entries(categoryMap).map(([key, name]) => renderCategoryLink(key, name))}
-          </ul>
-        </nav>
-
-        {/* Right side: Language selector, search, cart */}
+        {/* Right side: Language selector, admin, cart */}
         <div className="header-actions">
           {/* Language Selector */}
           <div className="language-selector">
@@ -126,6 +122,14 @@ export default function Header({ onCartToggle }) {
           </button>
         </div>
       </div>
+      
+      {/* Fechar menu de filtros ao clicar fora */}
+      {filterMenuOpen && (
+        <div 
+          className="filter-overlay"
+          onClick={() => setFilterMenuOpen(false)}
+        />
+      )}
     </header>
   )
 }

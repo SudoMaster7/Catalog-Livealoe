@@ -1,5 +1,5 @@
 .search-bar {
-  margin-bottom: 1.5rem;
+  flex: 1;
   animation: slideInDown 0.5s ease;
 }
 
