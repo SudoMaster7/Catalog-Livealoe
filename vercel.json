@@ -2,7 +2,7 @@
   "buildCommand": "npm run build",
   "installCommand": "npm install && cd server && npm install && cd ..",
   "devCommand": "npm run dev",
-  "framework": "react",
+  "framework": "vite",
   "version": 2,
   "public": true,
   "rewrites": [
