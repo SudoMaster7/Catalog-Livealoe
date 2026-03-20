@@ -1,0 +1,87 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(111, 189, 123, 0.6) 0%, rgba(45, 95, 61, 0.5) 100%);
+  border: 2px solid rgba(143, 193, 138, 0.7);
+  box-shadow: 0 8px 32px rgba(111, 189, 123, 0.35);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  animation: slideUp 0.4s ease-out;
+}
+
+.scroll-to-top:hover {
+  background: linear-gradient(135deg, rgba(143, 193, 138, 0.8) 0%, rgba(111, 189, 123, 0.7) 100%);
+  box-shadow: 0 12px 48px rgba(111, 189, 123, 0.5);
+  transform: translateY(-4px) scale(1.1);
+  border-color: rgba(143, 193, 138, 0.95);
+}
+
+.scroll-to-top:active {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.scroll-to-top .arrow {
+  display: inline-block;
+  animation: bounce 1s ease-in-out infinite;
+  font-weight: bold;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    width: 45px;
+    height: 45px;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-to-top {
+    width: 40px;
+    height: 40px;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 1.1rem;
+  }
+}

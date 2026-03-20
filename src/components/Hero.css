@@ -3,8 +3,8 @@
   height: 450px;
   overflow: hidden;
   margin-bottom: 3rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(45, 95, 61, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 15px 48px rgba(45, 95, 61, 0.25);
 }
 
 .hero-image {
@@ -34,11 +34,12 @@
   bottom: 0;
   background: linear-gradient(
     135deg,
-    rgba(45, 95, 61, 0.55) 0%,
-    rgba(74, 143, 87, 0.4) 50%,
-    rgba(45, 95, 61, 0.35) 100%
+    rgba(45, 95, 61, 0.6) 0%,
+    rgba(74, 143, 87, 0.45) 50%,
+    rgba(111, 189, 123, 0.35) 100%
   );
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 .hero-content {

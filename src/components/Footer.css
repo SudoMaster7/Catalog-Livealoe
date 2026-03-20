@@ -1,10 +1,12 @@
 .footer {
-  background: linear-gradient(135deg, #1a3a24 0%, #2d5f3d 50%, #1f4a2a 100%);
+  background: linear-gradient(135deg, rgba(26, 58, 36, 0.95) 0%, rgba(45, 95, 61, 0.85) 50%, rgba(31, 74, 42, 0.95) 100%);
   color: white;
   margin-top: 4rem;
   padding: 3rem 1rem;
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .footer::before {
@@ -14,7 +16,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(212, 165, 116, 0.3) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(212, 165, 116, 0.5) 50%, transparent 100%);
 }
 
 .footer-container {
@@ -82,20 +84,23 @@
 }
 
 .cert-badge {
-  background: linear-gradient(135deg, rgba(212, 165, 116, 0.15) 0%, rgba(107, 168, 118, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(111, 189, 123, 0.35) 0%, rgba(143, 193, 138, 0.2) 100%);
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 16px;
   text-align: center;
   font-size: 0.85rem;
-  border: 1px solid rgba(212, 165, 116, 0.3);
+  border: 2px solid rgba(111, 189, 123, 0.5);
   font-weight: 600;
   transition: all 0.3s ease;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .cert-badge:hover {
-  background: linear-gradient(135deg, rgba(212, 165, 116, 0.25) 0%, rgba(107, 168, 118, 0.15) 100%);
-  border-color: var(--color-accent);
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(111, 189, 123, 0.5) 0%, rgba(143, 193, 138, 0.35) 100%);
+  border-color: rgba(111, 189, 123, 0.8);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(111, 189, 123, 0.3);
 }
 
 .social-links {
@@ -111,18 +116,20 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(212, 165, 116, 0.2) 0%, rgba(107, 168, 118, 0.15) 100%);
-  border: 1px solid rgba(212, 165, 116, 0.3);
+  background: linear-gradient(135deg, rgba(111, 189, 123, 0.4) 0%, rgba(143, 193, 138, 0.25) 100%);
+  border: 2px solid rgba(111, 189, 123, 0.6);
   transition: all 0.3s ease;
   color: white;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .social-links a:hover {
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);
-  border-color: var(--color-accent);
-  color: #1a3a24;
-  transform: scale(1.1);
-  box-shadow: 0 8px 20px rgba(212, 165, 116, 0.3);
+  background: linear-gradient(135deg, rgba(111, 189, 123, 0.7) 0%, rgba(74, 143, 87, 0.6) 100%);
+  border-color: rgba(111, 189, 123, 0.9);
+  color: white;
+  transform: scale(1.15) translateY(-4px);
+  box-shadow: 0 12px 32px rgba(111, 189, 123, 0.4);
 }
 
 .footer-bottom {

@@ -4,7 +4,7 @@ import './Sidebar.css'
 
 export default function Sidebar() {
   const { t } = useTranslation()
-  const { filters, updateFilter, clearFilters, categories, priceRange } = useFilters()
+  const { filters, updateFilter, clearFilters, categories } = useFilters()
 
   return (
     <aside className="sidebar">
@@ -40,43 +40,6 @@ export default function Sidebar() {
                 {t(`products:categories.${category}`, { defaultValue: category })}
               </label>
             ))}
-          </div>
-        </div>
-
-        {/* Price Filter */}
-        <div className="filter-group">
-          <h3>{t('ui:price')}</h3>
-          <div className="price-inputs">
-            <div>
-              <label>{t('ui:price_from')}</label>
-              <input
-                type="number"
-                min={priceRange.min}
-                max={priceRange.max}
-                value={filters.minPrice}
-                onChange={(e) => updateFilter('minPrice', parseFloat(e.target.value))}
-              />
-            </div>
-            <div>
-              <label>{t('ui:price_to')}</label>
-              <input
-                type="number"
-                min={priceRange.min}
-                max={priceRange.max}
-                value={filters.maxPrice}
-                onChange={(e) => updateFilter('maxPrice', parseFloat(e.target.value))}
-              />
-            </div>
-          </div>
-          <div className="price-range-slider">
-            <input
-              type="range"
-              min={priceRange.min}
-              max={priceRange.max}
-              value={filters.maxPrice}
-              onChange={(e) => updateFilter('maxPrice', parseFloat(e.target.value))}
-              className="slider"
-            />
           </div>
         </div>
 

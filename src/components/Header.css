@@ -1,11 +1,12 @@
 .header {
-  background: linear-gradient(135deg, #ffffff 0%, #fafaf9 100%);
-  border-bottom: 2px solid rgba(74, 143, 87, 0.1);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(232, 243, 237, 0.35) 100%);
+  border-bottom: 2px solid rgba(111, 189, 123, 0.3);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 4px 12px rgba(45, 95, 61, 0.08);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(111, 189, 123, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   background-clip: padding-box;
 }
 
@@ -44,9 +45,11 @@
   display: flex;
   gap: 0.6rem;
   padding: 0.4rem;
-  background: rgba(232, 243, 237, 0.5);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0%, rgba(111, 189, 123, 0.15) 100%);
   border-radius: 50px;
-  border: 1px solid rgba(74, 143, 87, 0.1);
+  border: 2px solid rgba(111, 189, 123, 0.4);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
 }
 
 .lang-btn {
@@ -61,15 +64,17 @@
 }
 
 .lang-btn:hover {
-  background-color: var(--color-primary-lighter);
+  background: linear-gradient(135deg, rgba(200, 227, 210, 0.5) 0%, rgba(111, 189, 123, 0.3) 100%);
   border-color: var(--color-primary);
   transform: scale(1.1);
+  backdrop-filter: blur(10px);
 }
 
 .lang-btn.active {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 12px rgba(45, 95, 61, 0.2);
+  background: linear-gradient(135deg, rgba(111, 189, 123, 0.6) 0%, rgba(74, 143, 87, 0.5) 100%);
+  border-color: rgba(143, 193, 138, 0.8);
+  box-shadow: 0 4px 16px rgba(111, 189, 123, 0.3);
+  backdrop-filter: blur(15px);
 }
 
 .admin-link {
@@ -79,17 +84,20 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: rgba(232, 243, 237, 0.6);
+  background: linear-gradient(135deg, rgba(111, 189, 123, 0.3) 0%, rgba(200, 227, 210, 0.2) 100%);
   font-size: 1.3rem;
   text-decoration: none;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
+  border: 2px solid rgba(111, 189, 123, 0.4);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
 }
 
 .admin-link:hover {
-  background: linear-gradient(135deg, var(--color-primary-lighter) 0%, rgba(107, 168, 118, 0.2) 100%);
-  border-color: var(--color-primary);
-  transform: rotate(15deg) scale(1.05);
+  background: linear-gradient(135deg, rgba(111, 189, 123, 0.5) 0%, rgba(74, 143, 87, 0.4) 100%);
+  border-color: rgba(143, 193, 138, 0.8);
+  transform: rotate(15deg) scale(1.1);
+  box-shadow: 0 6px 20px rgba(111, 189, 123, 0.3);
 }
 
 .cart-btn {

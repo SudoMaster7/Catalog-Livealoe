@@ -8,6 +8,7 @@ import ProductGrid from '../components/ProductGrid'
 import Cart from '../components/Cart'
 import Footer from '../components/Footer'
 import SearchBar from '../components/SearchBar'
+import ScrollToTop from '../components/ScrollToTop'
 import './Catalog.css'
 
 export default function Catalog() {
@@ -105,6 +106,7 @@ export default function Catalog() {
       </div>
 
       <Cart isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
+      <ScrollToTop />
       <Footer />
     </div>
   )
