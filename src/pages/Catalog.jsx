@@ -13,7 +13,21 @@ import './Catalog.css'
 export default function Catalog() {
   const { t } = useTranslation()
   const [isCartOpen, setIsCartOpen] = useState(false)
-  const { products } = useFilters()
+  const [filterMenuOpen, setFilterMenuOpen] = useState(false)
+  const { products, filters, updateFilter } = useFilters()
+
+  const categoryMap = {
+    'multifuncionais': 'Multifuncionais',
+    'face': 'Rosto',
+    'body': 'Corpo',
+    'mouth': 'Boca',
+    'hair': 'Cabelo'
+  }
+
+  const handleCategoryClick = (category) => {
+    updateFilter('category', category)
+    setFilterMenuOpen(false)
+  }
 
   return (
     <div className="catalog-page">
@@ -24,7 +38,61 @@ export default function Catalog() {
         <Sidebar />
 
         <main className="catalog-main">
-          <SearchBar />
+          <div className="search-filter-section">
+            <SearchBar />
+            
+            {/* Filter Button */}
+            <div className="filter-dropdown">
+              <button 
+                className="filter-btn"
+                onClick={() => setFilterMenuOpen(!filterMenuOpen)}
+                title="Filtros"
+                aria-label="Abrir filtros"
+              >
+                <span className="filter-icon">⧂</span>
+              </button>
+              
+              {/* Filter Dropdown Menu */}
+              {filterMenuOpen && (
+                <div className="filter-menu">
+                  <div className="filter-menu-title">Categorias</div>
+                  <div className="filter-menu-item">
+                    <label>
+                      <input
+                        type="radio"
+                        name="category"
+                        value="all"
+                        checked={filters.category === 'all'}
+                        onChange={(e) => handleCategoryClick(e.target.value)}
+                      />
+                      Todos os Produtos
+                    </label>
+                  </div>
+                  {Object.entries(categoryMap).map(([key, name]) => (
+                    <div key={key} className="filter-menu-item">
+                      <label>
+                        <input
+                          type="radio"
+                          name="category"
+                          value={key}
+                          checked={filters.category === key}
+                          onChange={(e) => handleCategoryClick(e.target.value)}
+                        />
+                        {name}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {filterMenuOpen && (
+            <div 
+              className="filter-overlay"
+              onClick={() => setFilterMenuOpen(false)}
+            />
+          )}
 
           <div className="results-info">
             <span className="results-count">
