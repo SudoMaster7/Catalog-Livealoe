@@ -149,12 +149,6 @@
     font-size: 1.3rem;
   }
 
-  .filter-menu {
-    right: auto;
-    left: 0;
-    min-width: 200px;
-  }
-
   .header-actions {
     gap: 0.8rem;
   }
@@ -173,27 +167,6 @@
   .header-logo h1::before {
     content: '';
     margin-right: 0.3rem;
-  }
-
-  .filter-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-  }
-
-  .filter-menu {
-    min-width: 180px;
-    box-shadow: 0 4px 16px rgba(45, 95, 61, 0.15);
-  }
-
-  .filter-menu-title {
-    padding: 10px 12px;
-    font-size: 0.8rem;
-  }
-
-  .filter-menu-item label {
-    padding: 10px 12px;
-    font-size: 0.9rem;
   }
 
   .language-selector {
