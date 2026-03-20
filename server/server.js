@@ -67,6 +67,31 @@ const saveProducts = () => {
   fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
 };
 
+// Root endpoint
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'Livealoe Backend API',
+    version: '1.0.0',
+    status: 'running',
+    endpoints: {
+      health: '/api/health',
+      products: '/api/products',
+      categories: '/api/categories',
+      priceRange: '/api/price-range',
+      upload: 'POST /api/upload'
+    }
+  });
+});
+
+// API root
+app.get('/api', (req, res) => {
+  res.json({ 
+    message: 'Livealoe API v1',
+    version: '1.0.0',
+    status: 'running'
+  });
+});
+
 // Health check
 app.get('/api/health', (req, res) => {
   console.log('Health check requested');
