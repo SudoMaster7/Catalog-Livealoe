@@ -2,15 +2,52 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
+import { useFilters } from '../context/FilterContext'
 import './Header.css'
 
 export default function Header({ onCartToggle }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { t, i18n } = useTranslation()
   const { getTotalItems } = useCart()
+  const { filters, updateFilter } = useFilters()
 
   const handleNavClick = () => {
     setMobileMenuOpen(false)
+  }
+
+  // Mapear categorias com seus nomes em português
+  const categoryMap = {
+    'multifuncionais': 'Multifuncionais',
+    'face': 'Rosto',
+    'body': 'Corpo',
+    'mouth': 'Boca',
+    'hair': 'Cabelo'
+  }
+
+  // Função para tratar clique em categoria
+  const handleCategoryClick = (category) => {
+    updateFilter('category', category)
+    setMobileMenuOpen(false)
+  }
+
+  // Função para renderizar links de categoria com classe ativa
+  const renderCategoryLink = (categoryKey, displayName) => {
+    const isActive = filters.category === categoryKey
+    return (
+      <li key={categoryKey}>
+        <a 
+          href={`#${categoryKey}`}
+          className={`category-link ${isActive ? 'active' : ''}`}
+          onClick={(e) => {
+            e.preventDefault()
+            handleCategoryClick(categoryKey)
+          }}
+          title={`Filtrar por ${displayName}`}
+        >
+          {displayName}
+        </a>
+      </li>
+    )
   }
 
   const languages = [
@@ -41,11 +78,7 @@ export default function Header({ onCartToggle }) {
         {/* Navigation Menu */}
         <nav className={`header-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
           <ul>
-            <li><a href="#multifuncionais" onClick={handleNavClick}>Multifuncionais</a></li>
-            <li><a href="#face" onClick={handleNavClick}>Rosto</a></li>
-            <li><a href="#body" onClick={handleNavClick}>Corpo</a></li>
-            <li><a href="#mouth" onClick={handleNavClick}>Boca</a></li>
-            <li><a href="#hair" onClick={handleNavClick}>Cabelo</a></li>
+            {Object.entries(categoryMap).map(([key, name]) => renderCategoryLink(key, name))}
           </ul>
         </nav>
 
