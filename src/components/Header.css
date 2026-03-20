@@ -137,19 +137,6 @@
   }
 }
 
-/* Search and Filter Section */
-.header-search-filter {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  max-width: 500px;
-}
-
-.search-bar {
-  flex: 1;
-}
-
 /* Filter Dropdown */
 .filter-dropdown {
   position: relative;
@@ -272,12 +259,6 @@
     font-size: 1.3rem;
   }
 
-  .header-search-filter {
-    max-width: 100%;
-    width: 100%;
-    order: 3;
-  }
-
   .filter-menu {
     right: auto;
     left: 0;
@@ -302,16 +283,6 @@
   .header-logo h1::before {
     content: '';
     margin-right: 0.3rem;
-  }
-
-  .header-search-filter {
-    max-width: 100%;
-    width: 100%;
-    gap: 0.5rem;
-  }
-
-  .search-bar input {
-    font-size: 0.85rem;
   }
 
   .filter-btn {

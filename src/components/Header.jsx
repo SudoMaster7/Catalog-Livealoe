@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import { useFilters } from '../context/FilterContext'
-import SearchBar from './SearchBar'
 import './Header.css'
 
 export default function Header({ onCartToggle }) {
@@ -42,10 +41,8 @@ export default function Header({ onCartToggle }) {
           <h1>{t('common:brand')}</h1>
         </div>
 
-        {/* Search Bar + Filter Button */}
-        <div className="header-search-filter">
-          <SearchBar />
-          
+        {/* Right side: Filter, Language selector, admin, cart */}
+        <div className="header-actions">
           {/* Filter Button (Funil) */}
           <div className="filter-dropdown">
             <button 
@@ -90,10 +87,7 @@ export default function Header({ onCartToggle }) {
               </div>
             )}
           </div>
-        </div>
 
-        {/* Right side: Language selector, admin, cart */}
-        <div className="header-actions">
           {/* Language Selector */}
           <div className="language-selector">
             {languages.map(lang => (
