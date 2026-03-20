@@ -25,7 +25,7 @@ export default function Header({ onCartToggle }) {
 
         {/* Right side: Language selector, admin, cart */}
         <div className="header-actions">
-          {/* Language Selector */
+          {/* Language Selector */}
           <div className="language-selector">
             {languages.map(lang => (
               <button
