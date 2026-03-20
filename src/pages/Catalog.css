@@ -153,9 +153,6 @@
   border: 2px solid rgba(111, 189, 123, 0.3);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-}
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow-card);
   border-left: 4px solid var(--color-primary);
   animation: slideInDown 0.5s ease-out;
 }
