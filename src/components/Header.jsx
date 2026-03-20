@@ -78,6 +78,20 @@ export default function Header({ onCartToggle }) {
         {/* Navigation Menu */}
         <nav className={`header-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
           <ul>
+            {/* Botão "Todos" */}
+            <li>
+              <a 
+                href="#all"
+                className={`category-link ${filters.category === 'all' ? 'active' : ''}`}
+                onClick={(e) => {
+                  e.preventDefault()
+                  handleCategoryClick('all')
+                }}
+                title="Mostrar todos os produtos"
+              >
+                Todos
+              </a>
+            </li>
             {Object.entries(categoryMap).map(([key, name]) => renderCategoryLink(key, name))}
           </ul>
         </nav>
