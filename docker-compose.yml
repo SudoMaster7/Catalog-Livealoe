@@ -1,0 +1,56 @@
+services:
+  # Backend API
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: livealoe-backend
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+      - GOOGLE_DRIVE_FOLDER_ID=${GOOGLE_DRIVE_FOLDER_ID:-1EPaqcuS4LDVPahk48HyPAnEjnHi23xAm}
+    volumes:
+      # Volume Bind para armazenar uploads persistentemente (sincroniza com host)
+      - ./public/uploads:/app/public/uploads
+      # Volume para credenciais do Google Drive (opcional)
+      - ./server/google-credentials.json:/app/google-credentials.json:ro
+      # Volume para dados de produtos
+      - ./server/data:/app/data
+    restart: unless-stopped
+    networks:
+      - livealoe-network
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3001/api/health', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Frontend
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: livealoe-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - livealoe-network
+    environment:
+      - VITE_API_URL=http://backend:3001
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:5173/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+
+networks:
+  livealoe-network:
+    driver: bridge

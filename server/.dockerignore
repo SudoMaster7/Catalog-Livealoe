@@ -1,0 +1,13 @@
+node_modules
+npm-debug.log
+.env.local
+.env.*.local
+.DS_Store
+*.log
+.git
+.gitignore
+README.md
+Dockerfile
+.dockerignore
+upload.log
+GOOGLE_DRIVE_SETUP.md

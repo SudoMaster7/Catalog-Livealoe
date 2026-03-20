@@ -1,0 +1,270 @@
+{
+  "categories": {
+    "multifuncionais": "Multifuncionais",
+    "face": "Rosto",
+    "body": "Corpo",
+    "mouth": "Boca",
+    "hair": "Cabelo"
+  },
+  "products": {
+    "puro_gel_aloe": {
+      "name": "Puro Gel de Aloe",
+      "category": "multifuncionais",
+      "ingredients": "Aloe vera",
+      "description": "Gel de aloe puro e natural, multifuncional para face, corpo e cabelo",
+      "price": 39.90
+    },
+    "curcuma_biotintura": {
+      "name": "Cúrcuma Longa Bio-tintura",
+      "category": "multifuncionais",
+      "ingredients": "Aloe vera, Cúrcuma Longa",
+      "description": "Bio-tintura com propriedades anti-inflamatórias",
+      "price": 45.90
+    },
+    "gel_aloe_curcuma": {
+      "name": "GelAloe Cúrcuma",
+      "category": "multifuncionais",
+      "ingredients": "Aloe vera, Cúrcuma Longa",
+      "description": "Combinação poderosa para regeneração da pele",
+      "price": 49.90
+    },
+    "creme_balsamico_aloe_copaiba": {
+      "name": "Creme Balsâmico Aloe Copaíba",
+      "category": "multifuncionais",
+      "ingredients": "Aloe vera, Óleo de Copaíba",
+      "description": "Creme bálsamo para problemas dermatológicos",
+      "price": 55.90
+    },
+    "oleo_aloe_precioso": {
+      "name": "Óleo Aloe Precioso",
+      "category": "multifuncionais",
+      "ingredients": "Aloe vera, Óleos Essenciais",
+      "description": "Óleo premium para regeneração intensiva",
+      "price": 59.90
+    },
+    "esfoliante_natural": {
+      "name": "Esfoliante Natural",
+      "category": "multifuncionais",
+      "ingredients": "Aloe vera, Sementes Naturais",
+      "description": "Esfoliante suave e natural",
+      "price": 42.90
+    },
+    "oleo_semente_uva": {
+      "name": "Puro Óleo de Semente de Uva",
+      "category": "multifuncionais",
+      "ingredients": "Óleo de Semente de Uva",
+      "description": "Óleo puro para hidratação profunda",
+      "price": 44.90
+    },
+    "aloe_jabutica_shampoo": {
+      "name": "Aloe Jabuticaba Shampoo Sabonete",
+      "category": "multifuncionais",
+      "ingredients": "Aloe vera, Jabuticaba",
+      "description": "Shampoo sabonete 2 em 1 natural",
+      "price": 35.90
+    },
+    "aloe_moringa_shampoo": {
+      "name": "Aloe Moringa Shampoo Sabonete",
+      "category": "multifuncionais",
+      "ingredients": "Aloe vera, Moringa",
+      "description": "Shampoo sabonete fortalecedor",
+      "price": 35.90
+    },
+    "aloe_manga_condicionador": {
+      "name": "Aloe Manga Condicionador e Creme sem Enxágue",
+      "category": "multifuncionais",
+      "ingredients": "Aloe vera, Manga",
+      "description": "Condicionador leave-in natural",
+      "price": 41.90
+    },
+    "loção_limpeza_facial": {
+      "name": "Loção de Limpeza Facial",
+      "category": "face",
+      "ingredients": "Aloe vera, Extratos Botânicos",
+      "description": "Limpeza delicada e profunda",
+      "price": 38.90
+    },
+    "demaquilante_natural": {
+      "name": "Demaquilante Natural",
+      "category": "face",
+      "ingredients": "Aloe vera, Óleos Naturais",
+      "description": "Remove maquiagem mantendo hidratação",
+      "price": 42.90
+    },
+    "agua_aloe_biologica": {
+      "name": "Água de Aloe Biológica",
+      "category": "face",
+      "ingredients": "Aloe vera Biológico",
+      "description": "Água tônica hidratante 100% natural",
+      "price": 36.90
+    },
+    "agua_aloe_nutritiva": {
+      "name": "Água de Aloe Nutritiva",
+      "category": "face",
+      "ingredients": "Aloe vera, Nutrientes Naturais",
+      "description": "Água tônica nutritiva e revitalizante",
+      "price": 39.90
+    },
+    "sabonete_purificante": {
+      "name": "Sabonete Purificante",
+      "category": "face",
+      "ingredients": "Aloe vera, Extratos Desintoxicantes",
+      "description": "Sabonete facial purificante",
+      "price": 24.90
+    },
+    "agua_aloe_purificante": {
+      "name": "Água de Aloe Purificante",
+      "category": "face",
+      "ingredients": "Aloe vera, Essências Purificantes",
+      "description": "Água tônica purificante para pele oleosa",
+      "price": 39.90
+    },
+    "balsamos_faciais": {
+      "name": "Bálsamos Faciais",
+      "category": "face",
+      "ingredients": "Aloe vera, Óleos Bálsamos",
+      "description": "Bálsamo nourish para peles secas",
+      "price": 48.90
+    },
+    "serum_vivinha": {
+      "name": "Sérum da Vivinha",
+      "category": "face",
+      "ingredients": "Aloe vera, Extratos Raros",
+      "description": "Sérum anti-idade premium com aloe",
+      "price": 65.90
+    },
+    "leite_cremoso_corporal": {
+      "name": "Leite Cremoso Corporal",
+      "category": "body",
+      "ingredients": "Aloe vera, Babaçu",
+      "description": "Leite corporal nutritivo e sedoso",
+      "price": 44.90
+    },
+    "hidratante_corporal_cupuacu": {
+      "name": "Hidratante Corporal Aloe Cupuaçu",
+      "category": "body",
+      "ingredients": "Aloe vera, Cupuaçu",
+      "description": "Hidratação intensa e duradoura",
+      "price": 48.90
+    },
+    "loção_aloe_citronela": {
+      "name": "Loção Aloe Citronela",
+      "category": "body",
+      "ingredients": "Aloe vera, Citronela",
+      "description": "Proteção e hidratação com aroma fresco",
+      "price": 39.90
+    },
+    "creme_maos_unhas": {
+      "name": "Creme para Mãos e Unhas",
+      "category": "body",
+      "ingredients": "Aloe vera, Vitaminas Naturais",
+      "description": "Creme nutritivo para mãos delicadas",
+      "price": 34.90
+    },
+    "creme_pes_pernas": {
+      "name": "Creme para Pés e Pernas",
+      "category": "body",
+      "ingredients": "Aloe vera, Mentol Natural",
+      "description": "Creme refrescante para pés cansados",
+      "price": 39.90
+    },
+    "agua_aloe_hidratante": {
+      "name": "Água de Aloe Hidratante",
+      "category": "body",
+      "ingredients": "Aloe vera Hidratante",
+      "description": "Água spray para hidratação do corpo",
+      "price": 32.90
+    },
+    "oleo_gel_flor_aloe": {
+      "name": "Óleo-Gel Flor de Aloe",
+      "category": "body",
+      "ingredients": "Aloe vera, Extratos Florais",
+      "description": "Óleo-gel de textura leve",
+      "price": 44.90
+    },
+    "desodorantes_naturais": {
+      "name": "Desodorantes Naturais",
+      "category": "body",
+      "ingredients": "Aloe vera, Óleos Essenciais",
+      "description": "Desodorante natural sem alumínio",
+      "price": 28.90
+    },
+    "sabonete_higienizante": {
+      "name": "Sabonete Higienizante",
+      "category": "body",
+      "ingredients": "Aloe vera, Agentes Higienizantes",
+      "description": "Sabonete corporal antisséptico",
+      "price": 24.90
+    },
+    "sabonete_flor_aloe": {
+      "name": "Sabonete Flor de Aloe",
+      "category": "body",
+      "ingredients": "Aloe vera, Essências Florais",
+      "description": "Sabonete com aroma floral delicado",
+      "price": 24.90
+    },
+    "gel_dental_aloe_mamao": {
+      "name": "Gel Dental Aloe Mamão",
+      "category": "mouth",
+      "ingredients": "Aloe vera, Mamão",
+      "description": "Gel dental natural com aloe",
+      "price": 22.90
+    },
+    "gel_dental_aloe_melaleuca": {
+      "name": "Gel Dental Aloe Melaleuca",
+      "category": "mouth",
+      "ingredients": "Aloe vera, Melaleuca",
+      "description": "Gel dental anti-inflamatório",
+      "price": 22.90
+    },
+    "higienizante_bucal": {
+      "name": "Higienizante Bucal Natural",
+      "category": "mouth",
+      "ingredients": "Aloe vera, Agentes Anti-bacterianos",
+      "description": "Enxaguante bucal natural e eficaz",
+      "price": 26.90
+    },
+    "spray_bucal_natural": {
+      "name": "Spray Bucal Natural",
+      "category": "mouth",
+      "ingredients": "Aloe vera, Agentes Refrescantes",
+      "description": "Spray bucal fresco e revigorante",
+      "price": 28.90
+    },
+    "reparador_pontas": {
+      "name": "Reparador de Pontas Natural",
+      "category": "hair",
+      "ingredients": "Aloe vera, Óleos Reparadores",
+      "description": "Repara e sela as pontas danificadas",
+      "price": 39.90
+    },
+    "linha_aloe_vera": {
+      "name": "Linha Aloe Vera",
+      "category": "hair",
+      "ingredients": "Aloe vera",
+      "description": "Linha completa com aloe puro",
+      "price": 35.90
+    },
+    "agua_aloe_capilar": {
+      "name": "Água de Aloe Capilar",
+      "category": "hair",
+      "ingredients": "Aloe vera Capilar",
+      "description": "Água tônica para saúde capilar",
+      "price": 32.90
+    },
+    "linha_fortalecedora": {
+      "name": "Linha Fortalecedora",
+      "category": "hair",
+      "ingredients": "Aloe vera, Proteínas Naturais",
+      "description": "Fortalecimento e prevenção de queda",
+      "price": 41.90
+    },
+    "linha_aloe_fruta": {
+      "name": "Linhas Aloe Fruta",
+      "category": "hair",
+      "ingredients": "Aloe vera, Extratos de Frutas",
+      "description": "Linha com ingredientes frutados",
+      "price": 38.90
+    }
+  }
+}
