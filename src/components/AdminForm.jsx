@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import './AdminForm.css'
 
-// API URL dinâmica baseada no host atual
-const getApiUrl = () => `http://${window.location.hostname}:3001`;
+// API URL: use environment variable if available, fallback to localhost for development
+const getApiUrl = () => {
+  const baseUrl = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api', '') : `http://${window.location.hostname}:3001`;
+  return baseUrl;
+};
 
 function AdminForm({ onSubmit, initialData, isEditing }) {
   const [formData, setFormData] = useState({

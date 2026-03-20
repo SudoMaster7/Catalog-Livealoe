@@ -2,8 +2,8 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const FilterContext = createContext();
 
-// API URL dinâmica baseada no host atual
-const getApiUrl = () => `http://${window.location.hostname}:3001/api`;
+// API URL: use environment variable if available, fallback to localhost for development
+const getApiUrl = () => import.meta.env.VITE_API_URL || `http://${window.location.hostname}:3001/api`;
 
 export function FilterProvider({ children }) {
   const [filters, setFilters] = useState({
